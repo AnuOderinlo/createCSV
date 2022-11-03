@@ -17,7 +17,7 @@ const dataArr = fileData
     }
   });
 
-let dataArrCsv = fileData.split("\n").map((el) => el.split(","));
+let dataArrCsv = [...fileData.split("\n").map((el) => el.split(","))];
 
 // console.log(dataArr);
 
@@ -57,11 +57,11 @@ const createJsonFiles = (data) => {
 };
 createJsonFiles(dataArr);
 dataArrCsv[0] = ["S/N", "Filename", "UUID", "Output File Name"];
-
 dataArrCsv = dataArrCsv
   .map((el) => el.join(","))
-  .map((el) => el.replace("\r,", ""));
+  .map((el) => el.replace("\r", ""));
 
+// console.log(dataArrCsv.join("\n"));
 let outputCSV = dataArrCsv.join("\n");
 
 fs.writeFileSync("./output_csv/output-nft-naming.csv", outputCSV, "utf-8");
