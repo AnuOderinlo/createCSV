@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "crypto-js": "^4.1.1",
+    "csv-string": "^4.1.1",
     "uuid": "^9.0.0"
   }
 }

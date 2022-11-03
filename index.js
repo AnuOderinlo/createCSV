@@ -57,9 +57,8 @@ const createJsonFiles = (data) => {
 };
 createJsonFiles(dataArr);
 dataArrCsv[0] = ["S/N", "Filename", "UUID", "Output File Name"];
-dataArrCsv = dataArrCsv
-  .map((el) => el.join(","))
-  .map((el) => el.replace("\r", ""));
+dataArrCsv = dataArrCsv.map((el) => el.join(","));
+// .map((el) => el.replace("\r", ""));
 
 // console.log(dataArrCsv.join("\n"));
 let outputCSV = dataArrCsv.join("\n");
